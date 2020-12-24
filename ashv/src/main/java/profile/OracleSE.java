@@ -6,7 +6,7 @@ import java.util.List;
 public class OracleSE extends OracleEE implements IProfile {
     String profileName = "OracleSE";
 
-    private String sqlTextAsh = "SELECT /*+ monitor */ * FROM (SELECT sysdate SAMPLE_TIME, vs.sid SESSION_ID, vs.state SESSION_STATE,\n"+
+    private String sqlTextAsh = "SELECT * FROM (SELECT sysdate SAMPLE_TIME, vs.sid SESSION_ID, vs.state SESSION_STATE,\n"+
 "vs.serial# SESSION_SERIAL#, vs.user# USER_ID, vs.sql_id SQL_ID, vs.type SESSION_TYPE,\n"+
 "vs.event# EVENT#, (CASE WHEN vs.wait_time != 0 THEN 'CPU used' ELSE vs.event END) EVENT,\n"+
 "vs.seq# SEQ#, vs.p1 P1, vs.p2 P2, vs.p3 P3,\n"+
